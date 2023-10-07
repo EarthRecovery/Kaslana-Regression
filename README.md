@@ -19,7 +19,7 @@
 1. 获得一台云服务器 已完成：[控制面板 | EC2 | eu-north-1 (amazon.com)](https://eu-north-1.console.aws.amazon.com/ec2/home?region=eu-north-1#Home:)
 2. 获得一个域名 已完成 www.kaslanaproject.space 在whois上注册完成
 
-3. 进行域名解析 
+3. 进行域名解析 未完成
 4. 在本地完成模型构建
 
 5. 开放云服务器API端口
@@ -28,3 +28,14 @@
 8. 完成数据库创建和连接
 9. 导入数据
 10. 完成前端
+
+### What I have done
+
+10/6
+
+完成服务器实例创建以及域名申请
+
+10/7
+
+完成springboot搭建，数据库搭建以及JDBC 连接
+
