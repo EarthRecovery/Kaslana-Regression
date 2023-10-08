@@ -1,4 +1,4 @@
-package com.KaslanaProject.bean;
+package com.KaslanaProject.Bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

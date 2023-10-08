@@ -39,3 +39,6 @@
 
 完成springboot搭建，数据库搭建以及JDBC 连接
 
+10/8
+
+完成在anaconda下的线性模型测试实例编写以及spring boot对python文件的访问

@@ -1,6 +1,6 @@
 package com.KaslanaProject.Dao;
 
-import com.KaslanaProject.bean.TestBean;
+import com.KaslanaProject.Bean.TestBean;
 
 public interface TestDao {
     TestBean findById(int id);
