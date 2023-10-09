@@ -2,6 +2,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
 import numpy as np
+import pandas as pd
 
 def random_dataset_gengerate(a,b):
     # 生成随机输入数据
@@ -14,14 +15,26 @@ def random_dataset_gengerate(a,b):
     y_train = a * x_train + b + np.random.randn(100) * 0.1
     return x_train,y_train
 
+def getDataFromXls(path):
+    # 读取 Excel 文件
+    df = pd.read_excel(path, sheet_name='Points')
+
+    x_train = df['X'].values
+    y_train = df['Y'].values
+    return x_train,y_train
+
+
 def main():
     LinearModel = __import__('linearModel').LinearModel
-    x_train,y_train = random_dataset_gengerate(2.0,1.0)
+    x_train,y_train = getDataFromXls('..\KaslanaRegressionBackEnd\points.xls')
     modelClass = LinearModel(x_train,y_train)
     linearModel = modelClass.model()
     a,b = modelClass.train(linearModel,x_train,y_train)
-    print("Model Reference a", a[0][0])
-    print("Model reference b", b[0])
+    print(a[0][0])
+    print(b[0])
+
+def test():
+    getDataFromXls('..\KaslanaRegressionBackEnd\points.xls')
 
 if __name__ == '__main__':
     main()
