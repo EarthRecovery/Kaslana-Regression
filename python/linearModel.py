@@ -1,28 +1,40 @@
 import tensorflow as tf
+import numpy as np
 
 class LinearModel():
     def __init__(self,x_train,y_train):
         self.x_train = x_train
         self.y_train = y_train
 
-    def model(self):
         model = tf.keras.Sequential([
             tf.keras.layers.Input(shape=(1,)),
-            tf.keras.layers.Dense(units=1)
+            tf.keras.layers.Dense(units=10)
         ])
-        return model
+        self.model = model
     
-    def train(self, model, x_train, y_train):
+    def train(self):
+        x_train = self.x_train
+        y_train = self.y_train
         # 编译模型
-        model.compile(optimizer='sgd', loss='mean_squared_error')
+        optimizer = tf.keras.optimizers.SGD(learning_rate=0.01, clipvalue=1.0)  # 1.0是梯度裁剪的阈值
+        self.model.compile(optimizer=optimizer, loss='mean_squared_error')
 
         # 训练模型
-        model.fit(x_train, y_train, epochs=1000, verbose=0)
+        self.model.fit(x_train, y_train, epochs=1000, verbose=0)
 
         # 提取模型的参数 a 和 b
-        a, b = model.layers[0].get_weights()
+        a, b = self.model.layers[0].get_weights()
         return a,b
     
+    def mse(self):
+        # 使用模型进行预测
+        y_pred = self.model.predict(self.x_train)
+
+        # 计算均方误差（MSE）
+        mse = np.mean((self.y_train - y_pred)**2)
+
+        return mse
+
 
 # # 生成随机输入数据
 # np.random.seed(0)

@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class Line {
     private double slope;
     private double yIntercept;
+    private double mse;
 }

@@ -23,6 +23,8 @@ public class LinearRegressionServices {
     private double slope;
     private double yIntercept;
 
+    private double mse;
+
     public LinearRegressionServices(){
         this.points = new ArrayList<Point>();
     }
@@ -86,6 +88,7 @@ public class LinearRegressionServices {
 
             this.slope = Double.parseDouble(parts[0]);
             this.yIntercept = Double.parseDouble(parts[1]);
+            this.mse = Double.parseDouble(parts[2]);
 
             System.out.println("斜率：" + this.slope);
             System.out.println("截距：" + this.yIntercept);
@@ -95,7 +98,7 @@ public class LinearRegressionServices {
         }
         //返回线性回归的结果
 
-        return new Line(this.slope, this.yIntercept);
+        return new Line(this.slope, this.yIntercept, this.mse);
     }
 
     public void clearPoints(){

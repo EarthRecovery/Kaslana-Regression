@@ -1,9 +1,0 @@
-com\KaslanaProject\Bean\Line.class
-com\KaslanaProject\Bean\Point.class
-com\KaslanaProject\Controller\TestController.class
-com\KaslanaProject\Dao\TestDaoImpl.class
-com\KaslanaProject\Main.class
-com\KaslanaProject\Controller\LinearRegressionController.class
-com\KaslanaProject\Dao\TestDao.class
-com\KaslanaProject\Bean\TestBean.class
-com\KaslanaProject\Service\LinearRegressionServices.class
